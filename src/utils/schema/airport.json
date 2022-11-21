@@ -1,0 +1,152 @@
+{
+    "description": "",
+    "type": "object",
+    "x-examples": {
+        "example-1": {
+            "airport_from": "LHR",
+            "airport_to": "LOS",
+            "departure_time": "2019-08-24T14:15:22Z",
+            "arrival_time": "2021-01-30T06:45:00",
+            "flight_number": "7131",
+            "cabin_type": "economy",
+            "duration": 70,
+            "equipment_type": "735",
+            "operating_airline": "P4",
+            "marketing_airline": "P4",
+            "marriage_group": null,
+            "booking_class": "Y",
+            "baggage": "1 checkin allowance",
+            "overnight": true,
+            "layover": 120
+        }
+    },
+    "properties": {
+        "airport_from": {
+            "type": "string",
+            "minLength": 1,
+            "description": "IATA code of departure airport",
+            "example": "LHR"
+        },
+        "airport_to": {
+            "type": "string",
+            "minLength": 1,
+            "description": "IATA code of arrival airport",
+            "example": "LOS"
+        },
+        "departure_time": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Departure Date Time of flight",
+            "format": "date-time"
+        },
+        "arrival_time": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Arrival Date time of flight",
+            "format": "date-time",
+            "example": "2021-01-30T06:45:00"
+        },
+        "flight_number": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Flight Number",
+            "example": "7131"
+        },
+        "cabin_type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Cabin Type of fight",
+            "enum": [
+                "economy",
+                "premium_economy",
+                "business",
+                "first"
+            ]
+        },
+        "duration": {
+            "type": "number",
+            "description": "Flight Duration for particular segment in minutes",
+            "example": 70
+        },
+        "equipment_type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Airplane Type",
+            "example": "735"
+        },
+        "operating_airline": {
+            "type": "string",
+            "minLength": 1,
+            "description": "IATA code of Operating Airline",
+            "example": "P4"
+        },
+        "marketing_airline": {
+            "type": "string",
+            "minLength": 1,
+            "description": "IATA code of Marketing Airline",
+            "example": "P4"
+        },
+        "marriage_group": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "booking_class": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Booking Class of flight",
+            "example": "Y"
+        },
+        "baggage": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Checkin baggage allowance",
+            "example": "1 checkin allowance"
+        },
+        "overnight": {
+            "type": "boolean",
+            "description": "Is flight an overnight flight?"
+        },
+        "layover": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "Time (in minutes) between the arrival at an airport and departure to the next route",
+            "example": 120
+        },
+        "airline_details": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "Airline IATA code"
+                },
+                "logo": {
+                    "type": "string",
+                    "description": "Airline logo"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Airline name"
+                }
+            }
+        }
+    },
+    "required": [
+        "airport_from",
+        "airport_to",
+        "departure_time",
+        "arrival_time",
+        "flight_number",
+        "cabin_type",
+        "duration",
+        "equipment_type",
+        "operating_airline",
+        "marketing_airline",
+        "booking_class",
+        "baggage",
+        "overnight"
+    ]
+}

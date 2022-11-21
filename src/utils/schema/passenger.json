@@ -1,0 +1,139 @@
+{
+    "description": "Passengers model",
+    "type": "object",
+    "title": "",
+    "properties": {
+        "dob": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger date of birth (YYYY-MM-DD)"
+        },
+        "documents": {
+            "type": "object",
+            "required": [
+                "document_type",
+                "expiry_date",
+                "holder",
+                "issuing_country",
+                "issuing_date",
+                "nationality_country",
+                "number"
+            ],
+            "description": "Passenger travel documents",
+            "properties": {
+                "document_type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Document type",
+                    "enum": [
+                        "passport"
+                    ],
+                    "example": "passport"
+                },
+                "expiry_date": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Document expiry date (YYYY-MM-DD)",
+                    "format": "date",
+                    "example": "2023-03-30"
+                },
+                "holder": {
+                    "type": "boolean",
+                    "description": "Is traveler the holder/owner of document?"
+                },
+                "issuing_country": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Document issuance country in [ISO 3166-1 alpha-2 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)",
+                    "example": "NG"
+                },
+                "issuing_date": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Document issuance date (YYYY-MM-DD)"
+                },
+                "nationality_country": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Passenger country of Nationality in [ISO 3166-1 alpha-2 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)",
+                    "example": "NG"
+                },
+                "number": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Document number",
+                    "example": "A03456435"
+                }
+            }
+        },
+        "email": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger email address",
+            "format": "email",
+            "example": "ogbeni@domain.com"
+        },
+        "first_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger first name",
+            "example": "Ogbeni"
+        },
+        "gender": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger gender",
+            "enum": [
+                "male",
+                "female"
+            ],
+            "example": "male"
+        },
+        "last_name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger last name",
+            "example": "Lagbaja"
+        },
+        "passenger_type": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger type",
+            "enum": [
+                "adult",
+                "child",
+                "infant"
+            ],
+            "example": "adult"
+        },
+        "phone_number": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger Phone Number",
+            "example": "+2347030000000"
+        },
+        "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Passenger title",
+            "enum": [
+                "mr",
+                "mrs",
+                "miss",
+                "ms"
+            ],
+            "example": "mr"
+        }
+    },
+    "required": [
+        "dob",
+        "documents",
+        "email",
+        "first_name",
+        "gender",
+        "last_name",
+        "passenger_type",
+        "phone_number",
+        "title"
+    ]
+}
